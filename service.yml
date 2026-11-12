@@ -1,0 +1,29 @@
+name: discourse-buildable
+type: service
+icon: discourse
+title: Discourse (buildable)
+from: discourse
+fromVersionConstraint: "^2.0.0"
+fromVersion: "2.1.2"
+guidance: GUIDANCE.md
+
+labels:
+- discourse
+- forum
+
+# The Discourse release lines of the discourse service: the build starts from
+# the same wodby/discourse image and adds the app repository's plugins.
+build:
+  connect: true
+  dockerfile: Dockerfile
+  boilerplates:
+  - name: vanilla
+    title: Vanilla Discourse
+    repo: https://github.com/wodby/discourse-boilerplate
+    branch: main
+
+workloads:
+- name: main
+  containers:
+  - name: discourse
+    build: true
