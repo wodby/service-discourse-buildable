@@ -4,7 +4,7 @@ icon: discourse
 title: Discourse (buildable)
 from: discourse
 fromVersionConstraint: "^2.0.0"
-fromVersion: "2.1.11"
+fromVersion: "2.1.12"
 guidance: GUIDANCE.md
 
 labels:
